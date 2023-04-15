@@ -10,7 +10,15 @@ app.get('/', (req, res) => {
 
 // created a response
 const root = {
-    hello: () => "Hi, I'm GraphQL"
+    product: () => { 
+        return { 
+            "id": 234325, 
+            "name": "widget", 
+            "description": "Beautiful widget to use in your garden",
+            "price": 23.44,
+            "soldout": false
+        };
+     }
 };
 
 app.use('/graphql', graphqlHTTP({
